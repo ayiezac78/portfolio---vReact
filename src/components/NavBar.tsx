@@ -1,14 +1,12 @@
-import { NavLink, Outlet } from "react-router";
+import { NavLink, Outlet, Link } from "react-router";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Image } from "@unpic/react";
 import me from "@/assets/me.webp";
 import { blurhashToCssGradientString } from "@unpic/placeholder";
 import { ModeToggle } from "./mode-toggle";
-
-type Link = {
-	to: string;
-	content: string | JSX.Element;
-};
+import { Linkedin, Github, Instagram } from "lucide-react";
+import MobileSideMenuBar from "./MobileSideMenuBar";
+import MenuLinks from "./MenuLinks";
 
 interface ImageBlurHashProps {
 	src: string;
@@ -31,40 +29,12 @@ function ImageBlurHash({ src, alt, blurhash }: ImageBlurHashProps) {
 	);
 }
 
-const links: Link[] = [
-	{
-		to: "/posts",
-		content: "Posts",
-	},
-	{
-		to: "/projects",
-		content: "Projects",
-	},
-	{
-		to: "/about",
-		content: "About",
-	},
-];
-
 /**
  * A navigation bar that renders a list of links.
  *
  * @returns {JSX.Element} The JSX element for the navigation bar.
  */
 const NavBar = (): JSX.Element => {
-	const linkItems = links.map((link) => (
-		<li key={link.to}>
-			<NavLink
-				className={({ isActive }) =>
-					`text-sm ${isActive ? "font-medium" : "font-normal text-muted-foreground"}`
-				}
-				to={link.to}
-				viewTransition
-			>
-				{link.content}
-			</NavLink>
-		</li>
-	));
 	return (
 		<>
 			<nav className="flex items-center justify-between">
@@ -81,11 +51,41 @@ const NavBar = (): JSX.Element => {
 							</Avatar>
 						</NavLink>
 					</li>
-					{linkItems}
+					<MenuLinks />
 				</ul>
-				<ul>
+				<ul className="flex items-center gap-3">
+					<li>
+						<Link
+							to="https://www.linkedin.com/in/ayie"
+							rel="noopener noreferrer"
+							target="_blank"
+						>
+							<Linkedin className="h-[1.2rem] w-[1.2rem]" />
+						</Link>
+					</li>
+					<li>
+						<Link
+							to="https://github.com/ayiezac78"
+							rel="noopener noreferrer"
+							target="_blank"
+						>
+							<Github className="h-[1.2rem] w-[1.2rem]" />
+						</Link>
+					</li>
+					<li>
+						<Link
+							to="https://www.instagram.com/yieogainam"
+							rel="noopener noreferrer"
+							target="_blank"
+						>
+							<Instagram className="h-[1.2rem] w-[1.2rem]" />
+						</Link>
+					</li>
 					<li>
 						<ModeToggle />
+					</li>
+					<li className="xl:hidden">
+						<MobileSideMenuBar />
 					</li>
 				</ul>
 			</nav>

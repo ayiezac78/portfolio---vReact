@@ -50,23 +50,22 @@
 }
 
 @layer base {
-  /* @font-face {
-    font-family: 'Work Sans';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Work Sans'), url('./fonts/work-sans/WorkSans-Regular.woff') format('woff');
+  @font-face {
+    font-family: "Space Grotesk";
+    src: url('/fonts/Space-Grotesk.woff2') format('woff2'),
+      url('/fonts/Space-Grotesk.woff') format('woff');
+    font-optical-sizing: auto;
     font-display: swap;
+    font-style: normal;
   }
 
   @font-face {
-  font-family: "Space Grotesk", sans-serif;
-  src: url('./fonts/space-grotesk/SpaceGrotesk-Variable.woff2') format('woff2'),
-       url('./fonts/space-grotesk/SpaceGrotesk-Variable.woff') format('woff'),
-       url('./fonts/space-grotesk/SpaceGrotesk-Variable.ttf') format('truetype');
-      font-optical-sizing: auto;
-  font-display: swap;
-  font-style: normal;
-} */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Work Sans'), url('/fonts/Work-Sans.woff') format('woff');
+    font-display: swap;
+  }
 
   :root {
     --heading: "Space Grotesk", sans-serif;
