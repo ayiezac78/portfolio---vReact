@@ -22,8 +22,8 @@ function ImageBlurHash({ src, alt, blurhash }: ImageBlurHashProps) {
 			alt={alt}
 			background={placeholder}
 			layout="constrained"
-			width={64}
-			height={64}
+			width={38}
+			height={38}
 			className=" grayscale hover:grayscale-0 transition-all ease-in-out duration-500"
 		/>
 	);
