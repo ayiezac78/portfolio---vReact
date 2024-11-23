@@ -52,11 +52,22 @@
 @layer base {
   @font-face {
     font-family: "Space Grotesk";
-    src: url('/fonts/Space-Grotesk.woff2') format('woff2'),
-      url('/fonts/Space-Grotesk.woff') format('woff');
+    src: url('/fonts/SpaceGrotesk-Regular.woff2') format('woff2');
     font-optical-sizing: auto;
     font-display: swap;
     font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Space Grotesk override";
+    src: local('Helvetica Neue'),
+      local('Arial');
+    font-optical-sizing: auto;
+    font-display: swap;
+    font-style: normal;
+    ascent-override: 92.7734375%;
+    descent-override: 24.4140625%;
+    line-gap-override: 0%;
   }
 
   @font-face {
@@ -67,9 +78,21 @@
     font-display: swap;
   }
 
+  @font-face {
+    font-family: "Work Sans override";
+    src: local('Roboto'),
+      local('Open Sans');
+    font-optical-sizing: auto;
+    font-display: swap;
+    font-style: normal;
+    ascent-override: 92.7734375%;
+    descent-override: 24.4140625%;
+    line-gap-override: 0%;
+  }
+
   :root {
-    --heading: "Space Grotesk", sans-serif;
-    --common-font: "Work Sans", serif;
+    --heading: "Space Grotesk", "Space Grotesk override";
+    --common-font: "Work Sans", "Work Sans override";
   }
 
   * {
