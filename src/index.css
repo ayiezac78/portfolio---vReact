@@ -23,9 +23,9 @@
     --border: 20 5.9% 90%;
     --input: 20 5.9% 90%;
     --ring: 24.6 95% 53.1%;
-    --radius: 0.95remrem;
+    --radius: 0.95rem;
   }
- 
+
   .dark {
     --background: 20 14.3% 4.1%;
     --foreground: 60 9.1% 97.8%;
@@ -50,7 +50,7 @@
 }
 
 @layer base {
-    @font-face {
+  /* @font-face {
     font-family: 'Work Sans';
     font-style: normal;
     font-weight: normal;
@@ -59,19 +59,20 @@
   }
 
   @font-face {
-  font-family: 'SpaceGrotesk-Variable';
+  font-family: "Space Grotesk", sans-serif;
   src: url('./fonts/space-grotesk/SpaceGrotesk-Variable.woff2') format('woff2'),
        url('./fonts/space-grotesk/SpaceGrotesk-Variable.woff') format('woff'),
        url('./fonts/space-grotesk/SpaceGrotesk-Variable.ttf') format('truetype');
-  font-weight: 300 700;
+      font-optical-sizing: auto;
   font-display: swap;
   font-style: normal;
-}
+} */
 
-  :root{
-    --heading: 'SpaceGrotesk-Variable';
-    --common-font: 'Work Sans'
+  :root {
+    --heading: "Space Grotesk", sans-serif;
+    --common-font: "Work Sans", serif;
   }
+
   * {
     @apply border-border;
   }
@@ -79,9 +80,16 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--common-font);
+    font-optical-sizing: auto;
   }
 
-  h1,h2,h3,h4,h5,h6{
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--heading);
+    font-optical-sizing: auto;
   }
 }
