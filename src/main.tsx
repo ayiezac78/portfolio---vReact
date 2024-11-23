@@ -1,7 +1,7 @@
 import { lazy, StrictMode } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import "./index.css";
-import App from "./App.tsx";
+import Home from "./Home.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Layout from "./layout/Layout.tsx";
 
@@ -36,7 +36,7 @@ const createRoute = (
 });
 
 const routes: RouteDefinition[] = [
-	createRoute("/", App),
+	createRoute("/", Home),
 	createRoute("/about", pages.About),
 	createRoute("/projects", pages.Projects),
 	createRoute("/posts", pages.Posts),

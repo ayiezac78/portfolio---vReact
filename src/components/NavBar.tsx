@@ -56,7 +56,7 @@ const NavBar = (): JSX.Element => {
 		<li key={link.to}>
 			<NavLink
 				className={({ isActive }) =>
-					isActive ? "font-semibold" : "font-medium text-muted-foreground"
+					`text-sm ${isActive ? "font-medium" : "font-normal text-muted-foreground"}`
 				}
 				to={link.to}
 				viewTransition
@@ -67,10 +67,10 @@ const NavBar = (): JSX.Element => {
 	));
 	return (
 		<>
-			<nav className="flex items-center justify-between text-base">
+			<nav className="flex items-center justify-between">
 				<ul className="flex items-center gap-5">
 					<li>
-						<NavLink to="/" className="font-bold" viewTransition>
+						<NavLink to="/" viewTransition>
 							<Avatar className="ring-2 ring-gray-500 hover:ring-orange-500 border">
 								<ImageBlurHash
 									src={me}

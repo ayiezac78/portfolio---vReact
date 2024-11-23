@@ -1,7 +1,6 @@
-import "./App.css";
 import IntroSection from "./components/IntroSection";
 
-const App: React.FC = () => {
+const Home: React.FC = () => {
 	return (
 		<>
 			<IntroSection />
@@ -9,4 +8,4 @@ const App: React.FC = () => {
 	);
 };
 
-export default App;
+export default Home;
