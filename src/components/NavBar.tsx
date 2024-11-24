@@ -4,7 +4,7 @@ import { Image } from "@unpic/react";
 import me from "@/assets/me.webp";
 import { blurhashToCssGradientString } from "@unpic/placeholder";
 import { ModeToggle } from "./mode-toggle";
-import { Linkedin, Github, Instagram } from "lucide-react";
+import { Mail } from "lucide-react";
 import MobileSideMenuBar from "./MobileSideMenuBar";
 import MenuLinks from "./MenuLinks";
 
@@ -22,8 +22,9 @@ function ImageBlurHash({ src, alt, blurhash }: ImageBlurHashProps) {
 			alt={alt}
 			background={placeholder}
 			layout="constrained"
-			width={38}
-			height={38}
+			priority={true}
+			width={100}
+			height={100}
 			className=" grayscale hover:grayscale-0 transition-all ease-in-out duration-500"
 		/>
 	);
@@ -56,29 +57,11 @@ const NavBar = (): JSX.Element => {
 				<ul className="flex items-center gap-3">
 					<li>
 						<Link
-							to="https://www.linkedin.com/in/ayie"
+							to="mailto:admaniago01@gmail.com"
 							rel="noopener noreferrer"
 							target="_blank"
 						>
-							<Linkedin className="h-[1.2rem] w-[1.2rem]" />
-						</Link>
-					</li>
-					<li>
-						<Link
-							to="https://github.com/ayiezac78"
-							rel="noopener noreferrer"
-							target="_blank"
-						>
-							<Github className="h-[1.2rem] w-[1.2rem]" />
-						</Link>
-					</li>
-					<li>
-						<Link
-							to="https://www.instagram.com/yieogainam"
-							rel="noopener noreferrer"
-							target="_blank"
-						>
-							<Instagram className="h-[1.2rem] w-[1.2rem]" />
+							<Mail className="h-[1.2rem] w-[1.2rem]" />
 						</Link>
 					</li>
 					<li>
