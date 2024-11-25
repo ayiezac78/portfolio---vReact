@@ -10,7 +10,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 	return (
 		<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
 			<NavBar />
-			<main className="space-y-6">{children}</main>
+			<main className="space-y-12">{children}</main>
 			<Footer />
 		</ThemeProvider>
 	);

@@ -19,10 +19,10 @@ const links: Links[] = [
 ];
 const MenuLinks = () => {
 	const linkItems = links.map((link) => (
-		<li className="xl:block hidden" key={link.to}>
+		<li key={link.to}>
 			<NavLink
 				className={({ isActive }) =>
-					`text-sm ${isActive ? "font-semibold text-orange-500" : "font-medium text-muted-foreground"}`
+					`text-sm font-semibold hover:text-[#EF872E] transition-colors duration-300 ease-in-out ${isActive ? "text-[#EF872E]" : "text-muted-foreground"}`
 				}
 				to={link.to}
 				viewTransition

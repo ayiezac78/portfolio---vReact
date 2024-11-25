@@ -7,14 +7,15 @@ import { ModeToggle } from "./mode-toggle";
 import { Mail } from "lucide-react";
 import MobileSideMenuBar from "./MobileSideMenuBar";
 import MenuLinks from "./MenuLinks";
+import { useMediaQuery } from "usehooks-ts";
 
 interface ImageBlurHashProps {
-	src: string;
-	alt: string;
-	blurhash: string;
+	readonly src: string;
+	readonly alt: string;
+	readonly blurhash: string;
 }
 
-function ImageBlurHash({ src, alt, blurhash }: ImageBlurHashProps) {
+const ImageBlurHash = ({ src, alt, blurhash }: ImageBlurHashProps): JSX.Element => {
 	const placeholder = blurhashToCssGradientString(blurhash);
 	return (
 		<Image
@@ -25,10 +26,10 @@ function ImageBlurHash({ src, alt, blurhash }: ImageBlurHashProps) {
 			priority={true}
 			width={100}
 			height={100}
-			className=" grayscale hover:grayscale-0 transition-all ease-in-out duration-500"
+			className={`grayscale hover:grayscale-0 transition-all ease-in-out duration-500 ${window.location.pathname === "/" ? "grayscale-0" : "grayscale"}`}
 		/>
 	);
-}
+};
 
 /**
  * A navigation bar that renders a list of links.
@@ -36,13 +37,20 @@ function ImageBlurHash({ src, alt, blurhash }: ImageBlurHashProps) {
  * @returns {JSX.Element} The JSX element for the navigation bar.
  */
 const NavBar = (): JSX.Element => {
+	const matches = useMediaQuery("(max-width: 1280px)");
+
+	const avatarStyle = location.pathname === "/" ? "ring-2 border ring-[#EF872E]" : "";
+
 	return (
 		<>
 			<nav className="flex items-center justify-between">
 				<ul className="flex items-center gap-5">
 					<li>
-						<NavLink to="/" viewTransition>
-							<Avatar className="ring-2 ring-gray-500 hover:ring-orange-500 border">
+						<NavLink
+							to="/"
+							viewTransition
+						>
+							<Avatar className={`ring-2 border hover:ring-[#EF872E] ${avatarStyle}`}>
 								<ImageBlurHash
 									src={me}
 									alt="Profile Image Avatar"
@@ -52,7 +60,7 @@ const NavBar = (): JSX.Element => {
 							</Avatar>
 						</NavLink>
 					</li>
-					<MenuLinks />
+					{!matches && <MenuLinks />}
 				</ul>
 				<ul className="flex items-center gap-3">
 					<li>
@@ -64,12 +72,14 @@ const NavBar = (): JSX.Element => {
 							<Mail className="h-[1.2rem] w-[1.2rem]" />
 						</Link>
 					</li>
-					<li>
-						<ModeToggle />
-					</li>
-					<li className="xl:hidden">
-						<MobileSideMenuBar />
-					</li>
+					<ModeToggle />
+					{
+						matches && (
+							<li>
+								<MobileSideMenuBar />
+							</li>
+						)
+					}
 				</ul>
 			</nav>
 			<Outlet />
@@ -77,3 +87,4 @@ const NavBar = (): JSX.Element => {
 	);
 };
 export default NavBar;
+
