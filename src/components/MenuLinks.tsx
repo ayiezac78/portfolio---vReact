@@ -1,24 +1,7 @@
 import { NavLink } from "react-router";
-type Links = {
-	to: string;
-	content: string | JSX.Element;
-};
-const links: Links[] = [
-	{
-		to: "/posts",
-		content: "Posts",
-	},
-	{
-		to: "/projects",
-		content: "Projects",
-	},
-	{
-		to: "/about",
-		content: "About",
-	},
-];
+import { links as navLinks } from "@/components/route-links";
 const MenuLinks = () => {
-	const linkItems = links.map((link) => (
+	const linkItems = navLinks.map((link) => (
 		<li className="text-start" key={link.to}>
 			<NavLink
 				className={({ isActive }) =>
