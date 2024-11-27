@@ -41,7 +41,6 @@ const routes: RouteDefinition[] = [
 	createRoute("/projects", pages.Projects),
 	createRoute("/posts", pages.Posts),
 ];
-
 const router = createBrowserRouter(routes);
 
 const root: Root = createRoot(document.getElementById("root") as HTMLElement);

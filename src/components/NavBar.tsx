@@ -71,7 +71,9 @@ const NavBar = (): JSX.Element => {
 							<Mail aria-label="email" className="h-[1.2rem] w-[1.2rem]" />
 						</Link>
 					</li>
-					<ModeToggle />
+					<li>
+						<ModeToggle />
+					</li>
 					{
 						matches && (
 							<li>

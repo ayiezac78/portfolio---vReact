@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.10.2",
     "@glidejs/glide": "^3.7.1",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",
@@ -39,6 +40,7 @@
     "@tailwindcss/postcss": "4.0.0-beta.2",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.9.0",
+    "@types/quicklink": "^2.3.4",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@unlighthouse/vite": "^0.10.6",
@@ -50,9 +52,11 @@
     "fontaine": "^0.5.0",
     "globals": "^15.11.0",
     "postcss": "^8.4.49",
+    "quicklink": "^2.3.0",
     "tailwindcss": "4.0.0-beta.2",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.11.0",
-    "vite": "^5.4.10"
+    "vite": "^5.4.10",
+    "webpack-route-manifest": "^1.3.0"
   }
 }
