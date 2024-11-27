@@ -38,7 +38,7 @@ const ImageBlurHash = ({ src, alt, blurhash }: ImageBlurHashProps): JSX.Element 
 const NavBar = (): JSX.Element => {
 	const matches = useMediaQuery("(max-width: 1280px)");
 
-	const avatarStyle = location.pathname === "/" ? "ring-2 border ring-[#EF872E]" : "";
+	const avatarStyle = location.pathname === "/" ? "ring-2 border ring-primary" : "";
 
 	return (
 		<>
@@ -49,7 +49,7 @@ const NavBar = (): JSX.Element => {
 							to="/"
 							viewTransition
 						>
-							<Avatar className={`ring-2 border hover:ring-[#EF872E] ${avatarStyle}`}>
+							<Avatar className={`ring-2 border hover:ring-primary ${avatarStyle}`}>
 								<ImageBlurHash
 									src={me}
 									alt="Profile Image Avatar"

@@ -5,7 +5,7 @@ const MenuLinks = () => {
 		<li className="text-start" key={link.to}>
 			<NavLink
 				className={({ isActive }) =>
-					`text-sm font-semibold hover:text-[#EF872E] transition-colors duration-300 ease-in-out ${isActive ? "text-[#EF872E]" : "text-muted-foreground"}`
+					`text-sm font-semibold hover:text-primary transition-colors duration-300 ease-in-out ${isActive ? "text-primary" : "text-muted-foreground"}`
 				}
 				to={link.to}
 				viewTransition
