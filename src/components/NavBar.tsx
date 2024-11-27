@@ -22,10 +22,9 @@ const ImageBlurHash = ({ src, alt, blurhash }: ImageBlurHashProps): JSX.Element 
 			src={src}
 			alt={alt}
 			background={placeholder}
-			layout="fixed"
 			priority={true}
-			width={100}
-			height={100}
+			width={38}
+			height={38}
 			className={`grayscale hover:grayscale-0 transition-all ease-in-out duration-500 ${window.location.pathname === "/" ? "grayscale-0" : "grayscale"}`}
 		/>
 	);
