@@ -3,10 +3,16 @@ import useEmblaCarousel from 'embla-carousel-react'
 import styles from "@/assets/styles/embla-carousel.module.css";
 import { Link } from "react-router";
 import { Pin } from "lucide-react";
+import { projectData } from "@/lib/data/project-data";
 
 const ProjectSection = () => {
   const [emblaRef] = useEmblaCarousel();
 
+  const emblaSlides = projectData.map((project) => (
+    <div key={project.title} className={styles.embla__slide}>
+      <ProjectCards github={project.github} livePreview={project.livePreview} title={project.title} description={project.description} />
+    </div>
+  ))
   return (
     <section className="space-y-6">
       <span className="flex justify-between items-baseline border-b pb-2">
@@ -18,12 +24,7 @@ const ProjectSection = () => {
       </span>
       <div className={`${styles.embla} overflow-hidden`} ref={emblaRef}>
         <div className={styles.embla__container}>
-          <div className={styles.embla__slide}>
-            <ProjectCards github="https://github.com/ayiezac78/mp3-player" livePreview="https://ayiezac78.github.io/mp3-player/" title="mp3-player" description="A client-side application written in vanilla JavaScript using the AudioContext API, which allows you to listen to your favorite music." />
-          </div>
-          <div className={styles.embla__slide}>
-            <ProjectCards github="https://github.com/ayiezac78/clinic" livePreview="https://clinic-orcin.vercel.app/" title="clinic" description="It's a full stack web application that caters to patients' online appointment scheduling. It includes a clinic management system that modernizes the old manual system of a certain clinic." />
-          </div>
+          {emblaSlides}
         </div>
       </div>
     </section>

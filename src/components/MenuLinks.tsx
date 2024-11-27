@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { links as navLinks } from "@/components/route-links";
+import { links as navLinks } from "@/lib/data/route-links";
 const MenuLinks = () => {
 	const linkItems = navLinks.map((link) => (
 		<li className="text-start" key={link.to}>

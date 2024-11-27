@@ -22,7 +22,7 @@ const ImageBlurHash = ({ src, alt, blurhash }: ImageBlurHashProps): JSX.Element 
 			src={src}
 			alt={alt}
 			background={placeholder}
-			layout="constrained"
+			layout="fixed"
 			priority={true}
 			width={100}
 			height={100}
@@ -69,7 +69,7 @@ const NavBar = (): JSX.Element => {
 							rel="noopener noreferrer"
 							target="_blank"
 						>
-							<Mail className="h-[1.2rem] w-[1.2rem]" />
+							<Mail aria-label="email" className="h-[1.2rem] w-[1.2rem]" />
 						</Link>
 					</li>
 					<ModeToggle />

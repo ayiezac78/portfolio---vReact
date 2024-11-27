@@ -17,6 +17,7 @@ export function ModeToggle() {
 			<DropdownMenuTrigger asChild>
 				<Button
 					className="xl:border border-0 shadow-none rounded-full"
+					aria-label="Toggle mode"
 					variant="outline"
 					size="icon"
 				>
