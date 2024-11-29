@@ -1,34 +1,14 @@
 import { NavLink, Outlet, Link } from "react-router";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Image } from "@unpic/react";
-import me from "@/assets/me.webp";
-import { blurhashToCssGradientString } from "@unpic/placeholder";
+import me from "@/assets/profile_avatar.webp";
 import { ModeToggle } from "./mode-toggle";
 import { Mail } from "lucide-react";
 import MobileSideMenuBar from "./MobileSideMenuBar";
 import MenuLinks from "./MenuLinks";
 import { useMediaQuery } from "usehooks-ts";
+import ImageBlurHash from "./ImageBlurHash";
 
-interface ImageBlurHashProps {
-	readonly src: string;
-	readonly alt: string;
-	readonly blurhash: string;
-}
 
-const ImageBlurHash = ({ src, alt, blurhash }: ImageBlurHashProps): JSX.Element => {
-	const placeholder = blurhashToCssGradientString(blurhash);
-	return (
-		<Image
-			src={src}
-			alt={alt}
-			background={placeholder}
-			priority={true}
-			width={38}
-			height={38}
-			className={`grayscale hover:grayscale-0 transition-all ease-in-out duration-500 ${window.location.pathname === "/" ? "grayscale-0" : "grayscale"}`}
-		/>
-	);
-};
 
 /**
  * A navigation bar that renders a list of links.
@@ -38,7 +18,7 @@ const ImageBlurHash = ({ src, alt, blurhash }: ImageBlurHashProps): JSX.Element 
 const NavBar = (): JSX.Element => {
 	const matches = useMediaQuery("(max-width: 1280px)");
 
-	const avatarStyle = location.pathname === "/" ? "ring-2 border ring-primary" : "";
+	const avatarStyle = location.pathname === "/" ? "ring-2 ring-primary" : "";
 
 	return (
 		<>
@@ -49,11 +29,14 @@ const NavBar = (): JSX.Element => {
 							to="/"
 							viewTransition
 						>
-							<Avatar className={`ring-2 border hover:ring-primary ${avatarStyle}`}>
+							<Avatar className={`ring hover:ring-primary h-12 w-12 ${avatarStyle}`}>
 								<ImageBlurHash
 									src={me}
+									width={64}
+									height={64}
 									alt="Profile Image Avatar"
-									blurhash="LCDvH8E01t-C_8NHbcnh0P$%}FEM"
+									blurhash="LvGef%eZC~Xjt^klWFi|FgV{#8ni"
+									className=""
 								/>
 								<AvatarFallback>AM</AvatarFallback>
 							</Avatar>

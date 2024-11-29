@@ -2,7 +2,6 @@ import ProjectCards from "./ProjectCards";
 import useEmblaCarousel from 'embla-carousel-react'
 import styles from "@/assets/styles/embla-carousel.module.css";
 import { Link } from "react-router";
-import { Pin } from "lucide-react";
 import { projectData } from "@/lib/data/project-data";
 
 const ProjectSection = () => {
@@ -16,9 +15,8 @@ const ProjectSection = () => {
   return (
     <section className="space-y-6">
       <span className="flex justify-between items-baseline border-b pb-2">
-        <span className="text-muted-foreground flex items-center gap-x-2">
-          <Pin className="h-5 w-6 rotate-45" />
-          <h2 className="scroll-m-20  text-xl font-semibold tracking-tight first:mt-0 ">Projects</h2>
+        <span className="flex items-center gap-x-2">
+          <h2 className="scroll-m-20  text-xl font-medium tracking-tight first:mt-0 ">Projects</h2>
         </span>
         <Link to="/projects" className="text-sm font-medium text-muted-foreground hover:text-[#EF872E] transition-colors duration-200 ease-in-out">View all projects</Link>
       </span>
