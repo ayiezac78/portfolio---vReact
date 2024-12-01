@@ -1,29 +1,30 @@
-import Marquee from "react-fast-marquee";
 import { Icon } from '@iconify/react';
-import { ThemeProvider, useTheme } from "./theme-provider";
 
 const icons = [
-  "ri:reactjs-fill",
+  "typcn:html5",
+  "typcn:css3",
   "mdi:language-javascript",
+  "ri:reactjs-fill",
   "mdi:tailwind",
   "devicon-plain:bootstrap",
   "ion:logo-sass",
   "solar:figma-line-duotone",
   "devicon-plain:jquery-wordmark",
   "devicon-plain:php",
+  "mdi:github",
+  "iconoir:git",
+  "devicon-plain:filezilla",
+  "mdi:trello",
 ].map(iconName => ({ iconName }));
 
 const Stack = () => {
-  const { theme } = useTheme();
-  const gradientColors = theme === "dark" ? '#09090b' : '#ffffff';
   return (
-    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-      <Marquee autoFill gradient={true} gradientColor={gradientColors} gradientWidth={50} speed={25} pauseOnHover>
-        {icons.map((icon) => (
-          <Icon key={icon.iconName} className="text-muted-foreground mx-5" icon={icon.iconName} fontSize={"3rem"} />
-        ))}
-      </Marquee>
-    </ThemeProvider>
+
+    <div className="grid grid-cols-4 grid-rows-2 gap-4 justify-items-center">
+      {icons.map(({ iconName }) => (
+        <Icon className='text-muted-foreground' key={iconName} icon={iconName} fontSize={32} />
+      ))}
+    </div>
   )
 }
 

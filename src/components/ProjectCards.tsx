@@ -12,7 +12,7 @@ const ProjectCards = ({ title, description, github, livePreview }: ProjectCardsP
   return (
     <Card className="grid h-full grid-rows-[auto_1fr_auto]">
       <CardHeader className='p-3'>
-        <CardTitle className="text-lg font-medium">{title}</CardTitle>
+        <CardTitle className="text-lg font-semibold">{title}</CardTitle>
         <CardDescription className="text-sm text-muted-foreground">{description}</CardDescription>
       </CardHeader>
       <div className="grow" />

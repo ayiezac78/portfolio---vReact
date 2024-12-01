@@ -16,7 +16,7 @@ const ProjectSection = () => {
     <section className="space-y-6">
       <span className="flex justify-between items-baseline border-b pb-2">
         <span className="flex items-center gap-x-2">
-          <h2 className="scroll-m-20  text-xl font-medium tracking-tight first:mt-0 ">Projects</h2>
+          <h2 className="scroll-m-20  text-xl font-semibold tracking-tight first:mt-0 ">Projects</h2>
         </span>
         <Link to="/projects" className="text-sm font-medium text-muted-foreground hover:text-[#EF872E] transition-colors duration-200 ease-in-out">View all projects</Link>
       </span>

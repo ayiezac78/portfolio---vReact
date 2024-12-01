@@ -152,15 +152,15 @@
   }
 
   @font-face {
-    font-family: 'Work Sans';
+    font-family: 'Work-Sans';
     font-style: normal;
     font-weight: normal;
-    src: local('Work Sans'), url('/fonts/Work-Sans.woff') format('woff');
+    src: local('Work-Sans'), url('/fonts/Work-Sans.woff') format('woff');
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Work Sans override";
+    font-family: "Work-Sans override";
     src: local('Roboto'),
       local('Open Sans');
     font-optical-sizing: auto;
@@ -173,7 +173,7 @@
 
   :root {
     --heading: "Space Grotesk", "Space Grotesk override";
-    --common-font: "Work Sans", "Work Sans override";
+    --common-font: "Work-Sans", "Work-Sans override";
   }
 
   * {
@@ -195,4 +195,20 @@
     font-family: var(--heading);
     font-optical-sizing: auto;
   }
+
+  /* width */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground));
+    border-radius: 5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 }
