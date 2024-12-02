@@ -34,7 +34,7 @@ const Experience = () => {
             <small className='text-sm font-medium leading-none'>Maintaining & enhancing web performance of several current company websites.</small>
           </p>
         </CardContent>
-        <CardFooter className='gap-3'>
+        <CardFooter className='flex flex-wrap items-center gap-3'>
           {companyStack.map((stack) => (
             <Badge variant={"secondary"} key={stack}>{stack}</Badge>
           ))}
