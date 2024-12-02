@@ -2,12 +2,11 @@ import { NavLink, Outlet, Link } from "react-router";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import me from "@/assets/profile_avatar.webp";
 import { ModeToggle } from "./mode-toggle";
-import { FileText, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import MobileSideMenuBar from "./MobileSideMenuBar";
 import MenuLinks from "./MenuLinks";
 import { useMediaQuery } from "usehooks-ts";
 import ImageBlurHash from "./ImageBlurHash";
-import resume from "@/assets/Maniago_Resume.pdf";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem } from "@radix-ui/react-navigation-menu";
 import { Button } from "./ui/button";
@@ -39,22 +38,6 @@ const NavBar = (): JSX.Element => {
 					{!matches && <MenuLinks />}
 				</NavigationMenuList>
 				<NavigationMenuList className="flex items-center gap-2">
-					<NavigationMenuItem>
-						<TooltipProvider>
-							<Tooltip delayDuration={0}>
-								<TooltipTrigger>
-									<Button asChild size={"icon"} variant={"ghost"} className="rounded-full">
-										<a aria-label="resume" href={resume} target="_blank" rel="noopener noreferrer">
-											<FileText className="h-[1.2rem] w-[1.2rem]" />
-										</a>
-									</Button>
-								</TooltipTrigger>
-								<TooltipContent side="bottom" className="rounded-full">
-									<p>View Resume</p>
-								</TooltipContent>
-							</Tooltip>
-						</TooltipProvider>
-					</NavigationMenuItem>
 					<NavigationMenuItem>
 						<TooltipProvider>
 							<Tooltip delayDuration={0}>

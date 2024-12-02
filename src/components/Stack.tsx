@@ -19,12 +19,14 @@ const icons = [
 
 const Stack = () => {
   return (
-
-    <div className="grid grid-cols-4 grid-rows-2 gap-4 justify-items-center">
-      {icons.map(({ iconName }) => (
-        <Icon className='text-muted-foreground' key={iconName} icon={iconName} fontSize={32} />
-      ))}
-    </div>
+    <>
+      <h2 className="scroll-m-20 text-center pb-2 text-lg -tracking-tight first:mt-0 font-bold">technologies & tools I used</h2>
+      <div className="grid grid-cols-4 grid-rows-2 gap-4 justify-items-center">
+        {icons.map(({ iconName }) => (
+          <Icon className='text-muted-foreground' key={iconName} icon={iconName} fontSize={32} />
+        ))}
+      </div>
+    </>
   )
 }
 

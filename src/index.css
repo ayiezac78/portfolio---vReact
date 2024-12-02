@@ -160,7 +160,7 @@
   }
 
   @font-face {
-    font-family: "Work-Sans override";
+    font-family: "Roboto override";
     src: local('Roboto'),
       local('Open Sans');
     font-optical-sizing: auto;
@@ -173,7 +173,7 @@
 
   :root {
     --heading: "Space Grotesk", "Space Grotesk override";
-    --common-font: "Work-Sans", "Work-Sans override";
+    --common-font: "Work-Sans", "Roboto override";
   }
 
   * {
@@ -197,18 +197,18 @@
   }
 
   /* width */
-::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 0.5rem;
-}
+  }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
     background: hsl(var(--muted-foreground));
     border-radius: 5rem;
-}
+  }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
     background: #555;
-}
+  }
 }
