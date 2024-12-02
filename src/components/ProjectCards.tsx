@@ -18,10 +18,10 @@ const ProjectCards = ({ title, description, github, livePreview }: ProjectCardsP
       <div className="grow" />
       <CardFooter className="flex gap-x-3">
         <a aria-label='github' rel='noopener noreferrer' target='_blank' href={github}>
-          <Github className="h-5 w-5 text-muted-foreground hover:text-[#EF872E] transition-colors duration-300 ease-in-out" />
+          <Github className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors duration-300 ease-in-out" />
         </a>
         <a aria-label='external link' rel='noopener noreferrer' target='_blank' href={livePreview}>
-          <ExternalLink className="h-5 w-5 text-muted-foreground hover:text-[#EF872E] transition-colors duration-300 ease-in-out" />
+          <ExternalLink className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors duration-300 ease-in-out" />
         </a>
       </CardFooter>
     </Card>

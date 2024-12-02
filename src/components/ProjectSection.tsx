@@ -18,7 +18,7 @@ const ProjectSection = () => {
         <span className="flex items-center gap-x-2">
           <h2 className="scroll-m-20  text-xl font-semibold tracking-tight first:mt-0 ">Projects</h2>
         </span>
-        <Link to="/projects" className="text-sm font-medium text-muted-foreground hover:text-[#EF872E] transition-colors duration-200 ease-in-out">View all projects</Link>
+        <Link to="/projects" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200 ease-in-out">View all projects</Link>
       </span>
       <div className={`${styles.embla} overflow-hidden`} ref={emblaRef}>
         <div className={styles.embla__container}>

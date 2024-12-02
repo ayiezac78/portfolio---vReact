@@ -16,7 +16,7 @@ const MobileSideMenuBar = () => {
 	const linkItems: JSX.Element[] = navLinks.map((link) => (
 		<span key={link.to}>
 			<NavLink
-				className={({ isActive }) => `text-xl font-medium hover:text-[#EF872E] transition-colors duration-300 ease-in-out ${isActive ? "text-[#EF872E]" : "text-muted-foreground"}`}
+				className={({ isActive }) => `text-xl font-medium hover:text-primary transition-colors duration-300 ease-in-out ${isActive ? "text-primary" : "text-muted-foreground"}`}
 				to={link.to}
 				viewTransition
 				onClick={toggleSheet}
@@ -32,9 +32,9 @@ const MobileSideMenuBar = () => {
 				<Menu className="h-[1.2rem] w-[1.2rem]" />
 			</SheetTrigger>
 			<SheetContent className="grid">
-				<SheetHeader>
+				<SheetHeader className="space-y-5">
 					<SheetTitle className="text-start text-3xl">Menu</SheetTitle>
-					<SheetDescription className="grid justify-items-start">
+					<SheetDescription className="grid justify-items-start gap-y-3">
 						{linkItems}
 					</SheetDescription>
 				</SheetHeader>

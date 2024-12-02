@@ -9,6 +9,8 @@ import { useMediaQuery } from "usehooks-ts";
 import ImageBlurHash from "./ImageBlurHash";
 import resume from "@/assets/Maniago_Resume.pdf";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem } from "@radix-ui/react-navigation-menu";
+import { Button } from "./ui/button";
 
 const NavBar = (): JSX.Element => {
 	const matches = useMediaQuery("(max-width: 1280px)");
@@ -17,13 +19,10 @@ const NavBar = (): JSX.Element => {
 
 	return (
 		<>
-			<nav className="flex items-center justify-between">
-				<ul className="flex items-center gap-5">
-					<li>
-						<NavLink
-							to="/"
-							viewTransition
-						>
+			<NavigationMenu className="flex items-center justify-between">
+				<NavigationMenuList className="flex items-center gap-3">
+					<NavigationMenuItem>
+						<NavLink to="/" viewTransition>
 							<Avatar className={`ring hover:ring-primary h-12 w-12 ${avatarStyle}`}>
 								<ImageBlurHash
 									src={me}
@@ -36,54 +35,58 @@ const NavBar = (): JSX.Element => {
 								<AvatarFallback>AM</AvatarFallback>
 							</Avatar>
 						</NavLink>
-					</li>
+					</NavigationMenuItem>
 					{!matches && <MenuLinks />}
-				</ul>
-				<ul className="flex items-center gap-3">
-					<li>
+				</NavigationMenuList>
+				<NavigationMenuList className="flex items-center gap-2">
+					<NavigationMenuItem>
 						<TooltipProvider>
 							<Tooltip delayDuration={0}>
 								<TooltipTrigger>
-									<a aria-label="resume" href={resume} target="_blank" rel="noopener noreferrer">
-										<FileText className="h-[1.2rem] w-[1.2rem]" />
-									</a>
+									<Button asChild size={"icon"} variant={"ghost"} className="rounded-full">
+										<a aria-label="resume" href={resume} target="_blank" rel="noopener noreferrer">
+											<FileText className="h-[1.2rem] w-[1.2rem]" />
+										</a>
+									</Button>
 								</TooltipTrigger>
 								<TooltipContent side="bottom" className="rounded-full">
 									<p>View Resume</p>
 								</TooltipContent>
 							</Tooltip>
 						</TooltipProvider>
-					</li>
-					<li>
+					</NavigationMenuItem>
+					<NavigationMenuItem>
 						<TooltipProvider>
 							<Tooltip delayDuration={0}>
 								<TooltipTrigger>
-									<Link
-										to="mailto:admaniago01@gmail.com"
-										rel="noopener noreferrer"
-										target="_blank"
-									>
-										<Mail aria-label="email" className="h-[1.2rem] w-[1.2rem]" />
-									</Link>
+									<Button asChild size={"icon"} variant={"ghost"} className="rounded-full">
+										<Link
+											to="mailto:admaniago01@gmail.com"
+											rel="noopener noreferrer"
+											target="_blank"
+										>
+											<Mail aria-label="email" className="h-[1.2rem] w-[1.2rem]" />
+										</Link>
+									</Button>
 								</TooltipTrigger>
 								<TooltipContent side="bottom" className="rounded-full">
 									<p>Send Email</p>
 								</TooltipContent>
 							</Tooltip>
 						</TooltipProvider>
-					</li>
-					<li>
+					</NavigationMenuItem>
+					<NavigationMenuItem>
 						<ModeToggle />
-					</li>
+					</NavigationMenuItem>
 					{
 						matches && (
-							<li>
+							<NavigationMenuItem>
 								<MobileSideMenuBar />
-							</li>
+							</NavigationMenuItem>
 						)
 					}
-				</ul>
-			</nav>
+				</NavigationMenuList>
+			</NavigationMenu>
 			<Outlet />
 		</>
 	);
